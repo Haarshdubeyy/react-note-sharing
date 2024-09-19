@@ -1,24 +1,18 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import MyNotes from './pages/MyNotes';
-import SharedNotes from './pages/SharedNotes';
-import Profile from './pages/Profile';
+import HomePage from './components/Home/HomePage';
+import CreateNote from './Routes/CreateNote';
+import YourNoteList from './components/Notes/YourNoteList';
+
 
 const App = () => {
   return (
     <Router>
-      <div>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/my-notes" element={<MyNotes />} />
-          <Route path="/shared-notes" element={<SharedNotes />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/create-note" element={<CreateNote />} /> 
+        <Route path="/your-note" element={<YourNoteList />} /> 
+      </Routes>
     </Router>
   );
 };
