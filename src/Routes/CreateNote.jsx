@@ -1,4 +1,5 @@
 import React from 'react';
+import IndividualNote from '../components/Notes/IndividualNote';
 
 
 const CreateNote = () => {
@@ -7,7 +8,7 @@ const CreateNote = () => {
 
   return (
     <div>
-      <h1 className='text-2xl'>create note</h1>
+      <IndividualNote/>
       
     </div>
   );
