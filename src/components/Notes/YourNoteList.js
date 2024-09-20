@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaTrash } from 'react-icons/fa'; 
 import { Link } from 'react-router-dom';
+import ShareNotes from './ShareNotes';
 
 const YourNoteList = () => {
   const [notes, setNotes] = useState([]);
@@ -39,23 +40,26 @@ const YourNoteList = () => {
               style={{ minHeight: '150px' }}
             >
               <div className="bg-white p-4 rounded-lg shadow sticky-note-content relative">
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                  {note.title}
-                </h2>
-                <p className="text-gray-700">{note.content}</p>
+  <h2 className="text-2xl font-bold text-gray-800 mb-2">
+    {note.title}
+  </h2>
+  <p className="text-gray-700">{note.content}</p>
 
-               
-                <div className="w-4 h-4 bg-slate-400 rounded-full absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+  <div className="w-4 h-4 bg-slate-400 rounded-full absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
 
-            
-                <button
-                  onClick={() => handleDelete(note.id)}
-                  className="absolute top-2 right-2 text-red-500 hover:text-red-700"
-                  aria-label="Delete note"
-                >
-                  <FaTrash size={20} />
-                </button>
-              </div>
+  {/* ShareNote and Delete button container */}
+  <div className="absolute bottom-2 right-2 flex space-x-2">
+    <button
+      onClick={() => handleDelete(note.id)}
+      className="text-red-500 hover:text-red-700"
+      aria-label="Delete note"
+    >
+      <FaTrash size={20} />
+    </button>
+    <ShareNotes note={{ title: note.title, content: note.content }} />
+  </div>
+</div>
+
             </div>
           ))
         )}
