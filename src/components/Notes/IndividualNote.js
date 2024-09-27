@@ -36,21 +36,21 @@ const IndividualNote = () => {
               id="title"
               value={formData.title}
               onChange={handleChange}
-              className="beer-input w-full px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="beer-input text-black w-full px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
               placeholder="Enter note title"
               required
             />
           </div>
 
           <div className="mb-4">
-            <label htmlFor="content" className="beer-label block text-gray-800 text-sm font-bold mb-2">
+            <label htmlFor="content" className="beer-label block text-black text-sm font-bold mb-2">
               Content
             </label>
             <textarea
   id="content"
   value={formData.content}
   onChange={handleChange}
-  className="beer-textarea w-full px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+  className="beer-textarea text-black w-full px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
   placeholder="Write your note here..."
   rows="5"
   required
