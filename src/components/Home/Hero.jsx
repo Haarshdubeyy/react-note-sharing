@@ -8,7 +8,8 @@ const Hero = () => {
     >
       <Link
         to="/create-note"
-        className="text-white text-xl font-bold px-8 py-4 rounded-lg shadow-lg
+        className="text-white text-xl
+           font-bold px-8 py-4 rounded-lg shadow-lg
          bg-black bg-opacity-50 hover:bg-opacity-70 
          transition duration-300 ease-in-out"
       >

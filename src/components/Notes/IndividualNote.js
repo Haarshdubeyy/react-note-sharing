@@ -2,15 +2,21 @@ import React, { useState } from 'react';
 import useSaveNote from '../../Hooks/useSaveNote';
 
 const IndividualNote = () => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [formData, setFormData] = useState({
+    title: '',
+    content: '',
+  });
+
   const { saveNote } = useSaveNote();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    saveNote(title, content);
-    setTitle('');
-    setContent('');
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.id]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    saveNote(formData.title, formData.content);
+    setFormData({ title: '', content: '' }); // Reset form on submit
   };
 
   return (
@@ -22,14 +28,14 @@ const IndividualNote = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-800 text-sm font-bold mb-2" htmlFor="title">
+            <label htmlFor="title" className="block text-gray-800 text-sm font-bold mb-2">
               Title
             </label>
             <input
               type="text"
               id="title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              value={formData.title}
+              onChange={handleChange}
               className="w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
               placeholder="Enter note title"
               required
@@ -37,18 +43,18 @@ const IndividualNote = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-gray-800 text-sm font-bold mb-2" htmlFor="content">
+            <label htmlFor="content" className="block text-gray-800 text-sm font-bold mb-2">
               Content
             </label>
             <textarea
               id="content"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
+              value={formData.content}
+              onChange={handleChange}
               className="w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
               placeholder="Write your note here..."
               rows="5"
               required
-            ></textarea>
+            />
           </div>
 
           <button
