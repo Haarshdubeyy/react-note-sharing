@@ -10,17 +10,17 @@ const App = () => {
   return (
     <Router>
       <Routes>
-
+        {/* Parent Route with Navbar and Outlet */}
         <Route 
           path="/" 
           element={(
             <>
-              <Navbar /> 
-              <Outlet /> 
+              <Navbar /> {/* Navbar will always be shown */}
+              <Outlet /> {/* Outlet renders the child routes here */}
             </>
           )}
         >
-    
+          {/* Child Routes */}
           <Route index element={<HomePage />} />
           <Route path="create-note" element={<CreateNote />} />
           <Route path="your-note" element={<YourNoteList />} />
