@@ -54,7 +54,7 @@ const IndividualNote = () => {
   placeholder="Write your note here..."
   rows="5"
   required
-  // Add a Beer CSS modifier here
+
 >
 </textarea>
           </div>
