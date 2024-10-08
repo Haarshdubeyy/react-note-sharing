@@ -16,7 +16,7 @@ const IndividualNote = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     saveNote(formData.title, formData.content);
-    setFormData({ title: '', content: '' }); // Reset form on submit
+    setFormData({ title: '', content: '' }); 
   };
 
   return (
