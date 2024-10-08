@@ -6,13 +6,13 @@ import ShareNotes from './ShareNotes';
 const YourNoteList = () => {
   const [notes, setNotes] = useState([]);
 
-  // Fetch saved notes from localStorage when the component mounts
+
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
     setNotes(savedNotes);
   }, []);
 
-  // Function to delete the specific note
+
   const handleDelete = (id) => {
     const updatedNotes = notes.filter(note => note.id !== id);
     setNotes(updatedNotes);
@@ -47,7 +47,7 @@ const YourNoteList = () => {
 
   <div className="w-4 h-4 bg-slate-400 rounded-full absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
 
-  {/* ShareNote and Delete button container */}
+   {/*ShareNote and Delete button container*/}
   <div className="absolute bottom-2 right-2 flex space-x-2">
     <button
       onClick={() => handleDelete(note.id)}

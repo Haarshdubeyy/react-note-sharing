@@ -2,59 +2,64 @@ import React, { useState } from 'react';
 import useSaveNote from '../../Hooks/useSaveNote';
 
 const IndividualNote = () => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [formData, setFormData] = useState({
+    title: '',
+    content: '',
+  });
+
   const { saveNote } = useSaveNote();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    saveNote(title, content);
-    setTitle('');
-    setContent('');
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.id]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    saveNote(formData.title, formData.content);
+    setFormData({ title: '', content: '' }); 
   };
 
   return (
     <div className="flex justify-center items-center h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
-      <div className="bg-yellow-200 shadow-lg rounded-lg p-6 w-full max-w-md transform rotate-2 sticky-note">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800 underline text-center">
+      <div className="beer-card shadow-lg rounded-lg py-6 px-8 w-full max-w-md sticky-note">
+        <h2 className="beer-heading text-2xl font-bold mb-4 text-center text-gray-800">
           Create Note
         </h2>
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-800 text-sm font-bold mb-2" htmlFor="title">
+            <label htmlFor="title" className="beer-label block text-gray-800 text-sm font-bold mb-2">
               Title
             </label>
             <input
               type="text"
               id="title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              value={formData.title}
+              onChange={handleChange}
+              className="beer-input text-black w-full px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
               placeholder="Enter note title"
               required
             />
           </div>
 
           <div className="mb-4">
-            <label className="block text-gray-800 text-sm font-bold mb-2" htmlFor="content">
+            <label htmlFor="content" className="beer-label block text-black text-sm font-bold mb-2">
               Content
             </label>
             <textarea
-              id="content"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              placeholder="Write your note here..."
-              rows="5"
-              required
-            ></textarea>
+  id="content"
+  value={formData.content}
+  onChange={handleChange}
+  className="beer-textarea text-black w-full px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+  placeholder="Write your note here..."
+  rows="5"
+  required
+
+>
+</textarea>
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-yellow-600 transition duration-200"
-          >
+          <button type="submit" className="beer-button w-full bg-yellow-500 text-white hover:bg-yellow-600 transition duration-200">
             Save Note
           </button>
         </form>
