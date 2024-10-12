@@ -57,7 +57,7 @@ const YourNoteList = () => {
                 </h2>
                 <p className="text-gray-700">{note.content}</p>
                 <div className="w-4 h-4 bg-slate-400 rounded-full absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-                {/* ShareNote and Delete button container */}
+
                 <div className="absolute bottom-2 right-2 flex space-x-2">
                   <button
                     onClick={() => handleDelete(note.id)}

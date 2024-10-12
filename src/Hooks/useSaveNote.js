@@ -9,7 +9,6 @@ const useSaveNote = () => {
     setNotes(savedNotes);
   }, []);
 
-  // Function to save a new note
   const saveNote = (title, content) => {
     const newNote = { id: Date.now(), title, content };
     const updatedNotes = [...notes, newNote];
