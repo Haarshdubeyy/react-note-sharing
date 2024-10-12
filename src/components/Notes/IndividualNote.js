@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import useSaveNote from '../../Hooks/useSaveNote';
 
-const IndividualNote = () => {
+const IndividualNote = ({ onAddNote }) => {
   const [formData, setFormData] = useState({
     title: '',
     content: '',
   });
-
-  const { saveNote } = useSaveNote();
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
@@ -15,8 +12,8 @@ const IndividualNote = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    saveNote(formData.title, formData.content);
-    setFormData({ title: '', content: '' }); 
+    onAddNote(formData.title, formData.content); // Pass title and content to onAddNote
+    setFormData({ title: '', content: '' }); // Clear form after submission
   };
 
   return (
@@ -47,16 +44,14 @@ const IndividualNote = () => {
               Content
             </label>
             <textarea
-  id="content"
-  value={formData.content}
-  onChange={handleChange}
-  className="beer-textarea text-black w-full px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-  placeholder="Write your note here..."
-  rows="5"
-  required
-
->
-</textarea>
+              id="content"
+              value={formData.content}
+              onChange={handleChange}
+              className="beer-textarea text-black w-full px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              placeholder="Write your note here..."
+              rows="5"
+              required
+            ></textarea>
           </div>
 
           <button type="submit" className="beer-button w-full bg-yellow-500 text-white hover:bg-yellow-600 transition duration-200">
