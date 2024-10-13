@@ -1,44 +1,28 @@
 {
   "notes": [
     {
-      "title": "Meeting Notes",
-      "content": "Discussed the project timeline and upcoming deliverables. Assigned tasks to team members. Follow up next week.",
+      "title": "Note 1",
+      "content": "This is note 1.",
+      "title": "Note 1",
+      "content": "This is note 1.",
       "id": "b166"
     },
     {
-      "title": "Grocery List",
-      "content": "Milk, Bread, Eggs, Coffee, Vegetables, Fruits, Chicken.",
+      "title": "Note 2",
+      "content": "This is Note 212.",
+      "title": "Note 2",
+      "content": "This is Note 2.",
       "id": "7515"
     },
     {
-      "title": "Workout Plan",
-      "content": "Monday: Chest and Triceps, Tuesday: Back and Biceps, Wednesday: Legs, Thursday: Shoulders, Friday: Cardio.",
-      "id": "fd6b"
-    },
-    {
-      "title": "Holiday Itinerary",
-      "content": "Day 1: Arrival and check-in, Day 2: City tour, Day 3: Beach day, Day 4: Explore local markets.",
-      "id": "36eb"
-    },
-    {
-      "title": "Book Summary",
-      "content": "The book focuses on the principles of leadership and how to inspire teams to work towards a common goal. Key takeaways include the importance of communication and vision.",
-      "id": "ede7"
-    },
-    {
-      "id": "01.",
       "title": "Hello 3 ",
-      "content": "Hi everyone This is my 3rd note"
+      "content": "Hi everyone This is my 3rd note",
+      "id": "01_hello3"
     },
     {
-      "id": "01.",
-      "title": "Hello 4 ",
-      "content": "Hi everyone This is my 4rd note"
-    },
-    {
-      "id": "33da",
-      "title": "Hello 4 ",
-      "content": "Hi everyone This is my rd note."
+      "title": "Hello world",
+      "content": "This is my very first notes ",
+      "id": "20"
     }
   ]
 }
