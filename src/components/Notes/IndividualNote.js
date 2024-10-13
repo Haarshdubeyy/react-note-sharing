@@ -12,8 +12,8 @@ const IndividualNote = ({ onAddNote }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onAddNote(formData.title, formData.content); 
-    setFormData({ title: '', content: '' }); 
+    onAddNote(formData.title, formData.content); // Pass the note to be added
+    setFormData({ title: '', content: '' }); // Reset the form
   };
 
   return (

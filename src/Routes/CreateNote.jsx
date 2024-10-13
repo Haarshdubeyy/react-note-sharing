@@ -1,15 +1,10 @@
 import React from 'react';
 import IndividualNote from '../components/Notes/IndividualNote';
 
-
-const CreateNote = () => {
-
-
-
+const CreateNote = ({ onAddNote }) => {
   return (
     <div>
-      <IndividualNote/>
-      
+      <IndividualNote onAddNote={onAddNote} />
     </div>
   );
 };
