@@ -14,9 +14,8 @@ const IndividualNote = ({ onAddNote }) => {
     event.preventDefault();
     onAddNote(formData.title, formData.content); 
     setFormData({ title: '', content: '' }); 
-    onAddNote(formData.title, formData.content); // Pass the note to be added
-    setFormData({ title: '', content: '' }); // Reset the form
-  };
+    onAddNote(formData.title, formData.content); 
+    setFormData({ title: '', content: '' }); 
 
   return (
     <div className="flex justify-center items-center h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
