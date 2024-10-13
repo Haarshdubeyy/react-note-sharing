@@ -13,9 +13,7 @@ const IndividualNote = ({ onAddNote }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onAddNote(formData.title, formData.content); 
-    setFormData({ title: '', content: '' }); 
-    onAddNote(formData.title, formData.content); 
-    setFormData({ title: '', content: '' }); 
+    setFormData({ title: '', content: '' });  
 
   return (
     <div className="flex justify-center items-center h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
@@ -64,4 +62,4 @@ const IndividualNote = ({ onAddNote }) => {
   );
 };
 
-export default IndividualNote;
+export default IndividualNote; 
