@@ -9,7 +9,7 @@ const YourNoteList = () => {
   const [updatedContent, setUpdatedContent] = useState('');
   const [loading, setLoading] = useState(true); 
   const [error,setError] = useState(null);
-  // Fetch notes from the JSON server
+ //JSON SERVER
    useEffect(() => {
     axios
       .get('http://localhost:8000/notes')
@@ -27,7 +27,7 @@ const YourNoteList = () => {
     axios
       .delete(`http://localhost:8000/notes/${id}`)
       .then(() => {
-        setNotes(notes.filter((note) => note.id !== id)); // Update UI after delete
+        setNotes(notes.filter((note) => note.id !== id)); 
       })
       .catch((error) => {
         console.error('Error deleting note:', error);
