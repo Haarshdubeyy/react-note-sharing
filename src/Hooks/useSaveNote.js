@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 
-// Custom hook to handle saving, loading, updating, and deleting notes
+
 const useSaveNote = () => {
   const [notes, setNotes] = useState([]);
 
